@@ -13,8 +13,6 @@ class GuestsController < ApplicationController
 
   # GET /guests/new
   def new
-    @guest = Guest.new
-    @rooms = Room.all
   end
 
   # GET /guests/1/edit
