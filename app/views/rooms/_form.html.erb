@@ -1,0 +1,52 @@
+<%= form_with(model: room) do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+        <% room.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :size %>
+    <%= form.number_field :size, class:"form-control" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :bed %>
+    <%= form.text_field :bed, class:"form-control" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :price %>
+    <%= form.number_field :price, class:"form-control" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :wifi %>
+    <%= form.check_box :wifi, class: "checkbox" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :tv %>
+    <%= form.check_box :tv, class: "checkbox" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :ac %>
+    <%= form.check_box :ac, class: "checkbox" %>
+  </div>
+
+  <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.label :safe %>
+    <%= form.check_box :safe, class: "checkbox" %>
+  </div>
+
+  <div class="actions" style="margin: 2vh 5vw 2vh 5vw">
+    <%= form.submit class:"btn btn-secondary" %>
+  </div>
+<% end %>

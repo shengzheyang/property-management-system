@@ -1,0 +1,73 @@
+<div class="container" style="background-color: lightyellow; padding: 5vh 5vh 10vh 10vh; margin: 5vh">
+  <p>
+  <h1>Room <%= @room.id %></h1>
+  </p>
+  <p>
+    <strong>Size: </strong>
+    <%= @room.size %> sqft
+  </p>
+
+  <p>
+    <strong>Bedrooms: </strong>
+    <%= @room.bed %>
+  </p>
+
+  <p>
+    <strong>Price: </strong>
+    $<%= @room.price %>
+  </p>
+
+  <p><strong>Appliances: </strong>Wifi <% if @room.wifi %>
+      &#10003;
+    <% else %>
+      &#10539;
+    <% end %>
+    TV <% if @room.tv %>
+      &#10003;
+    <% else %>
+      &#10539;
+    <% end %>
+    AC <% if @room.ac %>
+      &#10003;
+    <% else %>
+      &#10539;
+    <% end %>
+    Safe <% if @room.safe %>
+      &#10003;
+    <% else %>
+      &#10539;
+    <% end %>
+  </p>
+  <%= link_to 'Edit', edit_room_path(@room), class:"btn btn-warning" %>
+  <%= link_to 'Back to Overview', rooms_path, class:"btn btn-light" %>
+  <br>
+
+  <% if @guests.present? %>
+    <hr>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Guest Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @guests.each do |guest| %>
+        <tr>
+          <td><%= guest.first_name %> <%= guest.last_name %></td>
+          <td><%= guest.phone %></td>
+          <td><%= guest.email %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+</div>
+
+
+
+
+
+

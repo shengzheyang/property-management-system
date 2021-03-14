@@ -1,0 +1,26 @@
+<% unless @guests.present? %>
+  <div style="margin: 5vh 5vw 2vh 5vw; text-align: center;">
+    <h3>There is no guest at the moment.</h3>
+  </div>
+<% end %>
+
+<div class="row row-cols-1 row-cols-md-4 g-4" style="margin: 5vh;">
+  <% @guests.each do |guest| %>
+    <div class="col">
+      <div class="card">
+        <h4 class="card-header"> <%= guest.first_name %> <%= guest.last_name %></h4>
+        <div class="card-body">
+          <p>Phone: <%= guest.phone %></p>
+          <p>Email: <%= guest.email %></p>
+
+        </div>
+        <div class="card-footer">
+          <%= link_to 'Details', guest, class:"btn btn-info" %>
+          <%= link_to 'Edit', edit_guest_path(guest), class:"btn btn-warning" %>
+          <%= link_to 'Delete', guest, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

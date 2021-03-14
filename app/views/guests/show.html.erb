@@ -1,0 +1,12 @@
+<div class="container" style="background-color: lightyellow; padding: 5vh 5vh 10vh 10vh; margin: 5vh">
+  <p>
+  <h1><%= @guest.first_name %> <%= @guest.last_name %></h1>
+  </p>
+  <p>
+  <h5><%= @guest.email %> | <%= @guest.phone %> | Room <%= @guest.room_id %></h5>
+  </p>
+  <%= link_to 'Edit', edit_guest_path(@guest), class:"btn btn-warning" %>
+  <%= link_to 'Back to Overview', guests_path, class:"btn btn-light" %>
+</div>
+
+
