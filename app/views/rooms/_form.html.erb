@@ -1,6 +1,6 @@
 <%= form_with(model: room) do |form| %>
   <% if room.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" style="margin: 2vh 5vw 2vh 5vw">
       <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
 
       <ul>
@@ -13,17 +13,17 @@
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :size %>
-    <%= form.number_field :size, class:"form-control" %>
+    <%= form.number_field :size, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :bed %>
-    <%= form.text_field :bed, class:"form-control" %>
+    <%= form.text_field :bed, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :price %>
-    <%= form.number_field :price, class:"form-control" %>
+    <%= form.number_field :price, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">

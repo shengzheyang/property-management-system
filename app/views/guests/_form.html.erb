@@ -1,7 +1,8 @@
 <%= form_with(model: guest) do |form| %>
   <% if guest.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" style="margin: 2vh 5vw 2vh 5vw">
       <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+
       <ul>
         <% guest.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,27 +13,27 @@
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, class:"form-control" %>
+    <%= form.text_field :first_name, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, class:"form-control" %>
+    <%= form.text_field :last_name, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :email %>
-    <%= form.text_field :email, class:"form-control" %>
+    <%= form.text_field :email, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :phone %>
-    <%= form.text_field :phone, class:"form-control" %>
+    <%= form.text_field :phone, :required => true, class:"form-control" %>
   </div>
 
   <div class="field form-group" style="margin: 2vh 5vw 2vh 5vw">
     <%= form.label :room_id %>
-    <%= form.number_field :room_id, class:"form-control" %>
+    <%= form.number_field :room_id, :required => true, class:"form-control" %>
   </div>
 
   <div class="actions" style="margin: 2vh 5vw 2vh 5vw">
